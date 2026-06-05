@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #09090B;
+  --color-secondary: #71717A;
+  --color-cta: #2563EB;
+  --color-background: #FAFAFA;
+  --color-text: #09090B;
+  --color-surface: #FFFFFF;
+  --color-surface-elevated: #F4F4F5;
+  --color-border: #E4E4E7;
+  --color-border-hover: #D4D4D8;
+  --color-muted: #71717A;
+  
+  --font-heading: var(--font-archivo), system-ui, sans-serif;
+  --font-body: var(--font-space-grotesk), system-ui, sans-serif;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.05);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,0.05);
+  --shadow-xl: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-text font-body antialiased selection:bg-cta/20 selection:text-cta;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight text-primary;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-surface/80 backdrop-blur-xl border border-border shadow-sm hover:shadow-md transition-shadow;
+  }
+  .glass-nav {
+    @apply bg-surface/80 backdrop-blur-xl saturate-150 border border-border shadow-sm;
+  }
+  .bento-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer;
+  }
+  .card {
+    @apply bg-surface rounded-xl p-6 shadow-sm border border-border transition-all duration-200 cursor-pointer hover:shadow-md hover:-translate-y-[2px] hover:border-border-hover;
+  }
+  .btn-primary {
+    @apply bg-cta text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 cursor-pointer hover:bg-cta/90 hover:-translate-y-[1px] shadow-sm hover:shadow-md;
+  }
+  .btn-secondary {
+    @apply bg-surface text-primary border border-border px-6 py-3 rounded-lg font-semibold transition-all duration-200 cursor-pointer hover:bg-surface-elevated hover:border-border-hover shadow-sm;
+  }
+  .section-divider {
+    @apply h-[1px] w-full bg-border;
+  }
+}
