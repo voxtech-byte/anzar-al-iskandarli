@@ -22,10 +22,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     }
     
     const sizeClasses = {
-      default: "h-10 px-4 py-2",
-      sm: "h-9 rounded-md px-3 text-sm",
-      lg: "h-11 rounded-md px-8",
-      icon: "h-10 w-10 flex items-center justify-center",
+      default: "h-12 px-5 py-2 text-base md:h-16 md:px-8 md:text-lg",
+      sm: "h-10 rounded-md px-4 text-sm md:h-12 md:px-6 md:text-base",
+      lg: "h-14 rounded-md px-8 text-lg md:h-16 md:px-10",
+      icon: "h-12 w-12 flex items-center justify-center md:h-16 md:w-16",
     }
     
     return (

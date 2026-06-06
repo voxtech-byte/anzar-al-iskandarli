@@ -10,14 +10,14 @@ export function Footer() {
           <Typography variant="muted">{profileData.role}</Typography>
         </div>
         
-        <div className="flex gap-6">
+        <div className="flex gap-4 sm:gap-6 flex-wrap justify-center md:justify-start">
           {profileData.contact.socials.map((social) => (
             <a
               key={social.platform}
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted hover:text-cta transition-colors text-sm font-medium"
+              className="text-muted hover:text-cta transition-colors text-sm font-medium p-2 md:p-0"
             >
               {social.platform}
             </a>

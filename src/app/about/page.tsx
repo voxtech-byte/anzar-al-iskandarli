@@ -126,7 +126,7 @@ export default function About() {
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                   onClick={() => setSelectedCert(cert)}
                   className={cn(
-                    "group relative overflow-hidden rounded-3xl cursor-pointer border border-border bg-surface shadow-sm hover:shadow-md flex flex-col justify-between p-8 min-h-[250px]",
+                    "group relative overflow-hidden rounded-3xl cursor-pointer border border-border bg-surface shadow-sm hover:shadow-md flex flex-col justify-between p-5 md:p-8 min-h-auto md:min-h-[280px]",
                     idx === 0 || idx === 3 ? "w-full md:w-[calc(66.666%-0.75rem)]" : "w-full md:w-[calc(33.333%-0.75rem)]"
                   )}
                 >
@@ -154,13 +154,14 @@ export default function About() {
       {/* Certificate Modal */}
       <Modal isOpen={!!selectedCert} onClose={() => setSelectedCert(null)}>
         {selectedCert && (
-          <div className="flex flex-col md:flex-row gap-8 bg-surface p-6 md:p-8 rounded-2xl">
+          <div className="flex flex-col md:flex-row gap-8 bg-zinc-900 p-6 md:p-8 pt-16 md:pt-8 rounded-2xl">
             <div className="w-full md:w-1/2 shrink-0 aspect-[4/3] relative rounded-xl overflow-hidden border border-border">
               {selectedCert.image ? (
                 <Image
                   src={selectedCert.image}
                   alt={selectedCert.name}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-contain bg-zinc-50"
                 />
               ) : (
@@ -171,24 +172,24 @@ export default function About() {
             </div>
             <div className="w-full flex flex-col justify-center space-y-6">
               <div>
-                <Typography variant="h3" className="text-2xl font-bold mb-2 text-primary">{selectedCert.name}</Typography>
-                <Typography className="text-zinc-600">{selectedCert.issuer}</Typography>
+                <Typography variant="h3" className="text-2xl font-bold mb-2 text-white">{selectedCert.name}</Typography>
+                <Typography className="text-zinc-400">{selectedCert.issuer}</Typography>
               </div>
               
-              <div className="grid grid-cols-2 gap-4 border-y border-border py-4">
+              <div className="grid grid-cols-2 gap-4 border-y border-zinc-800 py-4">
                 <div>
                   <Typography variant="small" className="text-zinc-500 uppercase tracking-widest text-xs mb-1">Date</Typography>
-                  <Typography className="font-semibold text-primary">{selectedCert.date}</Typography>
+                  <Typography className="font-semibold text-zinc-100">{selectedCert.date}</Typography>
                 </div>
                 <div>
                   <Typography variant="small" className="text-zinc-500 uppercase tracking-widest text-xs mb-1">ID</Typography>
-                  <Typography className="font-semibold text-primary font-mono">{selectedCert.id}</Typography>
+                  <Typography className="font-semibold text-zinc-100 font-mono">{selectedCert.id}</Typography>
                 </div>
               </div>
 
               {selectedCert.description && (
                 <div>
-                  <Typography className="text-zinc-600 leading-relaxed">
+                  <Typography className="text-zinc-400 leading-relaxed">
                     {selectedCert.description}
                   </Typography>
                 </div>

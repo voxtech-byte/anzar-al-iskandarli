@@ -17,10 +17,10 @@ export function Typography({ className, variant = "p", as, children, ...props }:
   );
 
   const variants = {
-    h1: "scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-primary",
-    h2: "scroll-m-20 text-3xl font-semibold tracking-tight transition-colors first:mt-0 text-primary",
-    h3: "scroll-m-20 text-2xl font-semibold tracking-tight text-primary",
-    h4: "scroll-m-20 text-xl font-semibold tracking-tight text-primary",
+    h1: "scroll-m-20 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-primary leading-tight",
+    h2: "scroll-m-20 text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight transition-colors first:mt-0 text-primary leading-snug",
+    h3: "scroll-m-20 text-xl sm:text-2xl font-semibold tracking-tight text-primary",
+    h4: "scroll-m-20 text-lg sm:text-xl font-semibold tracking-tight text-primary",
     p: "leading-7 [&:not(:first-child)]:mt-6 text-zinc-600",
     blockquote: "mt-6 border-l-2 border-cta pl-6 italic text-zinc-700 bg-surface-elevated p-4 rounded-r-lg",
     lead: "text-xl text-zinc-600",

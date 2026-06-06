@@ -18,6 +18,7 @@ export function BentoBox({ children, className, delay = 0, ...props }: BentoBoxP
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, delay, type: "spring", bounce: 0.3 }}
       whileHover={{ y: -5, scale: 1.01 }}
+      whileTap={{ scale: 0.98 }}
       className={cn(
         "card flex flex-col justify-between overflow-hidden relative group transition-all duration-300",
         className

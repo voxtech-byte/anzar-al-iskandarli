@@ -25,7 +25,7 @@ export default function Contact() {
     <div 
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="relative min-h-[90vh] flex flex-col justify-center py-24 overflow-hidden -mt-24" // Negative margin to compensate for nav
+      className="relative min-h-[90vh] flex flex-col justify-center py-24 overflow-hidden mt-0 lg:-mt-24" // Negative margin to compensate for nav
     >
       {/* Interactive Background Elements */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -117,7 +117,7 @@ export default function Contact() {
                     type="text" 
                     id="name" 
                     placeholder="John Doe" 
-                    className="w-full bg-surface-elevated border border-border rounded-2xl px-6 py-4 text-primary placeholder-zinc-400 outline-none focus:border-cta focus:ring-1 focus:ring-cta transition-all focus:bg-white"
+                    className="w-full bg-surface-elevated border border-border rounded-2xl px-5 py-3 md:px-6 md:py-4 text-primary placeholder-zinc-400 outline-none focus:border-cta focus:ring-1 focus:ring-cta transition-all focus:bg-white"
                   />
                 </div>
                 
@@ -127,7 +127,7 @@ export default function Contact() {
                     type="email" 
                     id="email" 
                     placeholder="john@example.com" 
-                    className="w-full bg-surface-elevated border border-border rounded-2xl px-6 py-4 text-primary placeholder-zinc-400 outline-none focus:border-cta focus:ring-1 focus:ring-cta transition-all focus:bg-white"
+                    className="w-full bg-surface-elevated border border-border rounded-2xl px-5 py-3 md:px-6 md:py-4 text-primary placeholder-zinc-400 outline-none focus:border-cta focus:ring-1 focus:ring-cta transition-all focus:bg-white"
                   />
                 </div>
               </div>
@@ -138,11 +138,11 @@ export default function Contact() {
                   id="message" 
                   rows={5}
                   placeholder="Tell me about your project, timeline, and expectations..." 
-                  className="w-full bg-surface-elevated border border-border rounded-2xl px-6 py-4 text-primary placeholder-zinc-400 outline-none focus:border-cta focus:ring-1 focus:ring-cta transition-all resize-none focus:bg-white"
+                  className="w-full bg-surface-elevated border border-border rounded-2xl px-5 py-3 md:px-6 md:py-4 text-primary placeholder-zinc-400 outline-none focus:border-cta focus:ring-1 focus:ring-cta transition-all resize-none focus:bg-white"
                 />
               </div>
 
-              <Button type="button" size="lg" className="w-full group shadow-md hover:shadow-lg h-16 rounded-2xl text-lg font-bold">
+              <Button type="button" size="lg" className="w-full group shadow-md hover:shadow-lg h-14 md:h-16 rounded-2xl text-base md:text-lg font-bold">
                 <span className="flex items-center justify-center">
                   Initialize Transmission 
                   <Send className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform" />

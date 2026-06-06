@@ -49,9 +49,9 @@ export function Modal({ isOpen, onClose, children, className }: ModalProps) {
               {/* Close Button */}
               <button
                 onClick={onClose}
-                className="absolute right-4 top-4 z-10 rounded-full bg-zinc-900/50 p-2 text-zinc-400 hover:bg-zinc-800 hover:text-white transition-colors backdrop-blur-md"
+                className="absolute right-4 top-4 md:right-6 md:top-6 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-zinc-900/50 text-zinc-400 hover:bg-zinc-800 hover:text-white transition-colors backdrop-blur-md"
               >
-                <X className="h-5 w-5" />
+                <X className="h-6 w-6" />
                 <span className="sr-only">Close</span>
               </button>
 

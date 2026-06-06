@@ -57,7 +57,7 @@ export function ProjectCard({ title, description, challenge, result, tags = [], 
     </>
   )
 
-  const containerClass = "group relative flex flex-col justify-between overflow-hidden rounded-2xl bg-white border border-zinc-200 p-8 shadow-sm transition-all hover:shadow-xl hover:-translate-y-1 block h-full min-h-[400px]"
+  const containerClass = "group project-card"
 
   return (
     <motion.div

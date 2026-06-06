@@ -36,7 +36,7 @@ export default function Home() {
                 <span className="text-zinc-600 font-medium">Available for new opportunities</span>
               </span>
             </Badge>
-            <Typography variant="h1" className="text-6xl md:text-[5.5rem] lg:text-[7rem] font-black tracking-tighter leading-[0.9]">
+            <Typography variant="h1" className="text-4xl sm:text-5xl md:text-6xl lg:text-[7rem] font-black tracking-tighter leading-[1.1] md:leading-[0.9]">
               Tech <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cta via-blue-500 to-indigo-500">
                 Provider.
@@ -116,7 +116,7 @@ export default function Home() {
       </section>
 
       {/* Immersive Bento Grid */}
-      <section className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6">
+      <section className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6 auto-rows-auto md:auto-rows-[300px]">
         {/* Bio Box - Large */}
         <BentoBox className="md:col-span-4 lg:col-span-4 row-span-1 bg-surface border-border shadow-sm group" delay={0.1}>
           <div className="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-100 transition-opacity translate-x-4 group-hover:translate-x-0">
@@ -124,7 +124,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col h-full justify-between relative z-10 p-8 gap-8 min-h-[250px]">
             <Typography variant="small" className="text-zinc-500 uppercase tracking-widest font-bold">The Vision</Typography>
-            <Typography className="text-lg md:text-xl lg:text-2xl font-serif italic text-zinc-700 leading-relaxed max-w-3xl">
+            <Typography className="text-base sm:text-lg md:text-xl font-normal text-zinc-800 tracking-tight leading-relaxed max-w-3xl">
               &quot;{profileData.vision}&quot;
             </Typography>
           </div>
@@ -192,7 +192,7 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="group relative rounded-[2rem] overflow-hidden bg-surface border border-border shadow-md flex flex-col md:flex-row hover:shadow-xl transition-shadow duration-500"
         >
-          <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-white z-10 relative">
+          <div className="w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center bg-white z-10 relative">
             <Badge variant="outline" className="w-fit mb-6 text-zinc-500">Case Study</Badge>
             <Typography variant="h2" className="text-3xl md:text-4xl font-bold mb-4 group-hover:text-cta transition-colors">
               {caseStudies[0].title}

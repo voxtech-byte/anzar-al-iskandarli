@@ -60,8 +60,8 @@ export default function Services() {
             viewport={{ once: true }}
             className="p-8 md:p-12 rounded-[2rem] border border-border bg-surface shadow-sm relative overflow-hidden hover:shadow-md transition-shadow"
           >
-            <div className="absolute top-0 right-0 p-8 opacity-10">
-              <XCircle className="w-32 h-32 text-red-500" />
+            <div className="absolute top-0 right-0 p-4 md:p-8 opacity-10">
+              <XCircle className="w-16 h-16 md:w-32 md:h-32 text-red-500" />
             </div>
             <Typography variant="h3" className="text-2xl text-zinc-500 mb-8 font-medium">Traditional Method</Typography>
             <ul className="space-y-6 relative z-10">
@@ -86,8 +86,8 @@ export default function Services() {
             viewport={{ once: true }}
             className="p-8 md:p-12 rounded-[2rem] border border-cta/20 bg-gradient-to-br from-blue-50 to-white relative overflow-hidden group shadow-md hover:shadow-lg transition-shadow"
           >
-            <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity group-hover:scale-110 duration-700">
-              <Zap className="w-32 h-32 text-cta" />
+            <div className="absolute top-0 right-0 p-4 md:p-8 opacity-10 group-hover:opacity-20 transition-opacity group-hover:scale-110 duration-700">
+              <Zap className="w-16 h-16 md:w-32 md:h-32 text-cta" />
             </div>
             <Typography variant="h3" className="text-3xl text-primary mb-8 font-bold flex items-center gap-3">
               Hybrid AI-Workflow
@@ -161,7 +161,7 @@ export default function Services() {
               <BentoBox 
                 key={idx}
                 className={cn(
-                  "bg-surface border-border p-8 shadow-sm min-h-[250px]",
+                  "bg-surface border-border p-6 md:p-8 shadow-sm min-h-auto md:min-h-[250px]",
                   widthClass
                 )}
                 delay={idx * 0.1}

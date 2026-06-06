@@ -30,7 +30,7 @@ export default function RootLayout({
       lang="en"
       className={`${archivo.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-background text-text">
+      <body className="min-h-full flex flex-col bg-background text-text overflow-x-hidden">
         <Navigation />
         <main className="flex-1 pt-24 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto w-full">
           {children}

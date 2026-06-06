@@ -35,22 +35,55 @@
 
 @layer utilities {
   .glass-card {
-    @apply bg-surface/80 backdrop-blur-xl border border-border shadow-sm hover:shadow-md transition-shadow;
+    @apply bg-surface/80 backdrop-blur-xl border border-border shadow-sm transition-shadow;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .glass-card {
+      @apply hover:shadow-md;
+    }
   }
   .glass-nav {
     @apply bg-surface/80 backdrop-blur-xl saturate-150 border border-border shadow-sm;
   }
   .bento-hover {
-    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer;
+    @apply transition-all duration-300 cursor-pointer;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .bento-hover {
+      @apply hover:-translate-y-1 hover:shadow-lg;
+    }
   }
   .card {
-    @apply bg-surface rounded-xl p-6 shadow-sm border border-border transition-all duration-200 cursor-pointer hover:shadow-md hover:-translate-y-[2px] hover:border-border-hover;
+    @apply bg-surface rounded-xl p-6 shadow-sm border border-border transition-all duration-200 cursor-pointer;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .card {
+      @apply hover:shadow-md hover:-translate-y-[2px] hover:border-border-hover;
+    }
   }
   .btn-primary {
-    @apply bg-cta text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 cursor-pointer hover:bg-cta/90 hover:-translate-y-[1px] shadow-sm hover:shadow-md;
+    @apply bg-cta text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 cursor-pointer shadow-sm;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .btn-primary {
+      @apply hover:bg-cta/90 hover:-translate-y-[1px] hover:shadow-md;
+    }
   }
   .btn-secondary {
-    @apply bg-surface text-primary border border-border px-6 py-3 rounded-lg font-semibold transition-all duration-200 cursor-pointer hover:bg-surface-elevated hover:border-border-hover shadow-sm;
+    @apply bg-surface text-primary border border-border px-6 py-3 rounded-lg font-semibold transition-all duration-200 cursor-pointer shadow-sm;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .btn-secondary {
+      @apply hover:bg-surface-elevated hover:border-border-hover;
+    }
+  }
+  .project-card {
+    @apply relative flex flex-col justify-between overflow-hidden rounded-2xl bg-white border border-zinc-200 p-8 shadow-sm transition-all block h-full min-h-[400px];
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .project-card {
+      @apply hover:shadow-xl hover:-translate-y-1;
+    }
   }
   .section-divider {
     @apply h-[1px] w-full bg-border;
