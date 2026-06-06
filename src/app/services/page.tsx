@@ -31,7 +31,7 @@ export default function Services() {
   }, [])
 
   return (
-    <div className="flex flex-col gap-32 pb-32 max-w-7xl mx-auto px-6 lg:px-12">
+    <div className="flex flex-col gap-16 md:gap-32 pb-32 max-w-7xl mx-auto px-6 lg:px-12">
       {/* Header */}
       <section className="pt-24 md:pt-32 text-center max-w-3xl mx-auto">
         <Typography variant="small" className="text-cta uppercase tracking-widest font-bold mb-6 block">

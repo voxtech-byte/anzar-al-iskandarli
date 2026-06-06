@@ -25,7 +25,7 @@ export default function Contact() {
     <div 
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="relative min-h-[90vh] flex flex-col justify-center py-24 overflow-hidden mt-0 lg:-mt-24" // Negative margin to compensate for nav
+      className="relative min-h-[90vh] flex flex-col justify-center pt-32 pb-24 lg:py-24 overflow-hidden mt-0 lg:-mt-24" // Negative margin to compensate for nav
     >
       {/* Interactive Background Elements */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -40,7 +40,7 @@ export default function Contact() {
         <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[120px] animate-pulse" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 w-full flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 w-full flex flex-col lg:flex-row gap-16 lg:gap-24 items-stretch lg:items-center">
         
         {/* Left: CTA & Info */}
         <motion.div 
