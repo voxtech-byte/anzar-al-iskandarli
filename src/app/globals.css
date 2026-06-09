@@ -1,24 +1,37 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #09090B;
-  --color-secondary: #71717A;
-  --color-cta: #2563EB;
-  --color-background: #FAFAFA;
-  --color-text: #09090B;
-  --color-surface: #FFFFFF;
-  --color-surface-elevated: #F4F4F5;
-  --color-border: #E4E4E7;
-  --color-border-hover: #D4D4D8;
-  --color-muted: #71717A;
+  --color-primary: #0075de;
+  --color-primary-active: #005bab;
+  --color-secondary: #213183;
+  --color-cta: #0075de;
+  --color-background: #f6f5f4;
+  --color-text: #000000;
+  --color-surface: #ffffff;
+  --color-surface-elevated: #ffffff;
+  --color-border: #000000;
+  --color-border-hover: #000000;
+  --color-muted: #615d59;
   
-  --font-heading: var(--font-archivo), system-ui, sans-serif;
-  --font-body: var(--font-space-grotesk), system-ui, sans-serif;
+  --color-accent-sky: #62aef0;
+  --color-accent-purple: #d6b6f6;
+  --color-accent-pink: #ff64c8;
+  --color-accent-orange: #dd5b00;
+  --color-accent-teal: #2a9d99;
+  --color-accent-green: #1aae39;
+  
+  --font-heading: var(--font-inter), system-ui, sans-serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
 
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.05);
-  --shadow-lg: 0 10px 25px rgba(0,0,0,0.05);
-  --shadow-xl: 0 20px 40px rgba(0,0,0,0.05);
+  /* Notion soft shadows mixed with Neo-brutalist offset */
+  --shadow-sm: 2px 2px 0px rgba(0,0,0,1);
+  --shadow-md: 4px 4px 0px rgba(0,0,0,1);
+  --shadow-lg: 6px 6px 0px rgba(0,0,0,1);
+  --shadow-xl: 8px 8px 0px rgba(0,0,0,1);
+  
+  /* Skeuomorphic Inset Shadows */
+  --shadow-inset-skeuo: inset 1px 1px 0px rgba(255, 255, 255, 0.8), inset -2px -2px 0px rgba(0, 0, 0, 0.15);
+  --shadow-inset-skeuo-pressed: inset 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 @layer base {
@@ -26,66 +39,103 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-background text-text font-body antialiased selection:bg-cta/20 selection:text-cta;
+    @apply bg-background text-text font-body antialiased selection:bg-primary/20 selection:text-primary;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading tracking-tight text-primary;
+    @apply font-heading tracking-tight text-text font-bold;
+  }
+  h1 {
+    @apply tracking-[-2.125px];
+  }
+  h2 {
+    @apply tracking-[-1.875px];
   }
 }
 
 @layer utilities {
   .glass-card {
-    @apply bg-surface/80 backdrop-blur-xl border border-border shadow-sm transition-shadow;
+    @apply bg-surface border-2 border-border shadow-md transition-all duration-200;
+    box-shadow: var(--shadow-md), var(--shadow-inset-skeuo);
   }
   @media (hover: hover) and (pointer: fine) {
     .glass-card {
-      @apply hover:shadow-md;
+      @apply hover:-translate-y-[2px];
+      box-shadow: var(--shadow-lg), var(--shadow-inset-skeuo);
     }
   }
   .glass-nav {
-    @apply bg-surface/80 backdrop-blur-xl saturate-150 border border-border shadow-sm;
+    @apply bg-surface/90 backdrop-blur-md border-b-2 border-border;
   }
   .bento-hover {
-    @apply transition-all duration-300 cursor-pointer;
+    @apply transition-all duration-200 cursor-pointer;
   }
   @media (hover: hover) and (pointer: fine) {
     .bento-hover {
-      @apply hover:-translate-y-1 hover:shadow-lg;
+      @apply hover:-translate-y-[2px];
+      box-shadow: var(--shadow-lg), var(--shadow-inset-skeuo);
+    }
+    .bento-hover:active {
+      @apply translate-y-[2px];
+      box-shadow: var(--shadow-sm), var(--shadow-inset-skeuo-pressed);
     }
   }
   .card {
-    @apply bg-surface rounded-xl p-6 shadow-sm border border-border transition-all duration-200 cursor-pointer;
+    @apply bg-surface rounded-lg p-6 border-2 border-border transition-all duration-200 cursor-pointer;
+    box-shadow: var(--shadow-md), var(--shadow-inset-skeuo);
   }
   @media (hover: hover) and (pointer: fine) {
     .card {
-      @apply hover:shadow-md hover:-translate-y-[2px] hover:border-border-hover;
+      @apply hover:-translate-y-[2px];
+      box-shadow: var(--shadow-lg), var(--shadow-inset-skeuo);
+    }
+    .card:active {
+      @apply translate-y-[2px];
+      box-shadow: var(--shadow-sm), var(--shadow-inset-skeuo-pressed);
     }
   }
   .btn-primary {
-    @apply bg-cta text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 cursor-pointer shadow-sm;
+    @apply bg-primary text-white px-6 py-3 rounded-full font-bold transition-all duration-200 cursor-pointer border-2 border-border;
+    box-shadow: var(--shadow-md), var(--shadow-inset-skeuo);
   }
   @media (hover: hover) and (pointer: fine) {
     .btn-primary {
-      @apply hover:bg-cta/90 hover:-translate-y-[1px] hover:shadow-md;
+      @apply hover:bg-primary-active hover:-translate-y-[2px];
+      box-shadow: var(--shadow-lg), var(--shadow-inset-skeuo);
+    }
+    .btn-primary:active {
+      @apply translate-y-[2px];
+      box-shadow: var(--shadow-sm), var(--shadow-inset-skeuo-pressed);
     }
   }
   .btn-secondary {
-    @apply bg-surface text-primary border border-border px-6 py-3 rounded-lg font-semibold transition-all duration-200 cursor-pointer shadow-sm;
+    @apply bg-surface text-text border-2 border-border px-6 py-3 rounded-full font-bold transition-all duration-200 cursor-pointer;
+    box-shadow: var(--shadow-md), var(--shadow-inset-skeuo);
   }
   @media (hover: hover) and (pointer: fine) {
     .btn-secondary {
-      @apply hover:bg-surface-elevated hover:border-border-hover;
+      @apply hover:bg-background hover:-translate-y-[2px];
+      box-shadow: var(--shadow-lg), var(--shadow-inset-skeuo);
+    }
+    .btn-secondary:active {
+      @apply translate-y-[2px];
+      box-shadow: var(--shadow-sm), var(--shadow-inset-skeuo-pressed);
     }
   }
   .project-card {
-    @apply relative flex flex-col justify-between overflow-hidden rounded-2xl bg-white border border-zinc-200 p-8 shadow-sm transition-all block h-full min-h-[400px];
+    @apply relative flex flex-col justify-between overflow-hidden rounded-xl bg-surface border-2 border-border p-8 transition-all block h-full min-h-[400px];
+    box-shadow: var(--shadow-md), var(--shadow-inset-skeuo);
   }
   @media (hover: hover) and (pointer: fine) {
     .project-card {
-      @apply hover:shadow-xl hover:-translate-y-1;
+      @apply hover:-translate-y-[2px];
+      box-shadow: var(--shadow-lg), var(--shadow-inset-skeuo);
+    }
+    .project-card:active {
+      @apply translate-y-[2px];
+      box-shadow: var(--shadow-sm), var(--shadow-inset-skeuo-pressed);
     }
   }
   .section-divider {
-    @apply h-[1px] w-full bg-border;
+    @apply h-[2px] w-full bg-border;
   }
 }

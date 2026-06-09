@@ -17,10 +17,11 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-24 pb-32 overflow-hidden">
       {/* Hero Section */}
-      <section className="pt-32 pb-16 relative">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cta/5 blur-[120px] rounded-full pointer-events-none -z-10" />
+      <section className="pt-32 pb-16 relative bg-secondary rounded-b-[3rem] text-surface border-b-2 border-border shadow-md -mt-24 pt-[180px] px-4">
+        {/* Constellation effect for night band */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/5 blur-[120px] rounded-full pointer-events-none -z-10" />
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center max-w-7xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -36,20 +37,20 @@ export default function Home() {
                 <span className="text-zinc-600 font-medium">Available for new opportunities</span>
               </span>
             </Badge>
-            <Typography variant="h1" className="text-4xl sm:text-5xl md:text-6xl lg:text-[7rem] font-black tracking-tighter leading-[1.1] md:leading-[0.9]">
+            <Typography variant="h1" className="text-4xl sm:text-5xl md:text-6xl lg:text-[7rem] font-black tracking-tighter leading-[1.1] md:leading-[0.9] text-surface">
               Tech <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cta via-blue-500 to-indigo-500">
+              <span className="text-surface">
                 Provider.
               </span>
             </Typography>
-            <Typography variant="lead" className="max-w-xl text-zinc-600 text-xl leading-relaxed">
+            <Typography variant="lead" className="max-w-xl text-surface/80 text-xl leading-relaxed">
               {profileData.bio[0]}
             </Typography>
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button asChild size="lg" className="rounded-full bg-cta hover:bg-cta/90 text-white px-8 h-14 text-lg shadow-md hover:shadow-lg">
+              <Button asChild size="lg" className="btn-primary">
                 <Link href="/work">View Works <ArrowRight className="ml-2 h-5 w-5" /></Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-full border-border bg-surface hover:bg-surface-elevated px-8 h-14 text-lg">
+              <Button asChild variant="outline" size="lg" className="btn-secondary">
                 <Link href="/contact">Let&apos;s Talk</Link>
               </Button>
             </div>
@@ -130,15 +131,15 @@ export default function Home() {
           </div>
         </BentoBox>
 
-        {/* Core Value 1 */}
-        <BentoBox className="md:col-span-2 lg:col-span-2 bg-gradient-to-br from-cta to-blue-600 border-0 shadow-md group text-white" delay={0.2}>
+        {/* Core Value 1 - Using Sticker Colors */}
+        <BentoBox className="md:col-span-2 lg:col-span-2 bg-[var(--color-accent-sky)] border-2 border-border shadow-md group text-text" delay={0.2}>
           <div className="flex flex-col h-full justify-between p-6 gap-6 min-h-[250px]">
-            <div className="h-16 w-16 rounded-2xl bg-white/20 flex items-center justify-center backdrop-blur-md shadow-sm group-hover:scale-110 transition-transform">
-              <Zap className="h-8 w-8 text-white" />
+            <div className="h-16 w-16 rounded-2xl bg-white border-2 border-border flex items-center justify-center shadow-[inset_1px_1px_0px_rgba(255,255,255,0.8)] group-hover:scale-110 transition-transform">
+              <Zap className="h-8 w-8 text-primary" />
             </div>
             <div>
-              <Typography variant="h3" className="text-white text-2xl">{profileData.coreValues[0].title}</Typography>
-              <Typography className="text-white/80 mt-2 line-clamp-3">
+              <Typography variant="h3" className="text-text text-2xl font-bold">{profileData.coreValues[0].title}</Typography>
+              <Typography className="text-text/80 mt-2 line-clamp-3">
                 {profileData.coreValues[0].description}
               </Typography>
             </div>
@@ -157,15 +158,15 @@ export default function Home() {
           </div>
         </BentoBox>
 
-        {/* Core Value 2 */}
-        <BentoBox className="md:col-span-2 lg:col-span-3 bg-surface-elevated border-border shadow-sm" delay={0.4}>
+        {/* Core Value 2 - Using Sticker Colors */}
+        <BentoBox className="md:col-span-2 lg:col-span-3 bg-[var(--color-accent-pink)] border-2 border-border shadow-md" delay={0.4}>
           <div className="flex flex-col h-full justify-between p-6 gap-6 min-h-[250px]">
-            <div className="h-16 w-16 rounded-2xl bg-white border border-border flex items-center justify-center group-hover:border-blue-200 transition-colors shadow-sm">
-              <BrainCircuit className="h-8 w-8 text-zinc-500 group-hover:text-blue-500 transition-colors" />
+            <div className="h-16 w-16 rounded-2xl bg-white border-2 border-border flex items-center justify-center shadow-[inset_1px_1px_0px_rgba(255,255,255,0.8)] group-hover:scale-110 transition-transform">
+              <BrainCircuit className="h-8 w-8 text-primary" />
             </div>
             <div>
-              <Typography variant="h3" className="text-2xl text-primary">{profileData.coreValues[1].title}</Typography>
-              <Typography className="mt-2 line-clamp-3 text-zinc-600">
+              <Typography variant="h3" className="text-text text-2xl font-bold">{profileData.coreValues[1].title}</Typography>
+              <Typography className="mt-2 line-clamp-3 text-text/80">
                 {profileData.coreValues[1].description}
               </Typography>
             </div>

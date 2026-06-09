@@ -27,15 +27,15 @@ export function Navigation() {
               key={item.path}
               href={item.path}
               className={cn(
-                "relative text-xs sm:text-sm font-semibold transition-colors hover:text-cta px-3 py-1.5 sm:py-2 whitespace-nowrap rounded-full",
-                isActive ? "text-cta" : "text-zinc-500"
+                "relative text-xs sm:text-sm font-bold transition-colors hover:text-primary px-3 py-1.5 sm:py-2 whitespace-nowrap rounded-full",
+                isActive ? "text-primary" : "text-muted"
               )}
             >
               <span className="relative z-10">{item.name}</span>
               {isActive && (
                 <motion.div
                   layoutId="activeNavIndicator"
-                  className="absolute inset-0 bg-zinc-200/50 md:bg-cta/10 rounded-full"
+                  className="absolute inset-0 bg-primary/10 rounded-full"
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 />
               )}
